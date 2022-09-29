@@ -17,10 +17,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    /* Compare lowercase of playerSelection vs. computer Selection
-    and return the winner. Rock > Scissors, Scissors > Paper, and
-    Paper > Rock. */
-
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
 
@@ -35,22 +31,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// for(let i = 0; i < 10; i++) {
-//     let player = getComputerChoice();
-//     let computer = getComputerChoice();
-//     let result = playRound(player, computer);
-//     let resultString = result > 0 ? "The player!" 
-//                     : (result < 0 ? "The computer!" : "Nobody, it's a tie!");
-//     console.log(`Player chose ${player} and computer chose ${computer}.
-//                 The winner is ${resultString}`);
-// }
-
 function game() {
-    /* Play 5 rounds of RPS with the computer
-    Each time, prompt the user for a selection, then
-    call the playRound function passing the result returned from
-    getComputerChoice. */
-
     console.log("Let's play Rock Paper Scissors!");
     console.log("The game will run 5 rounds against the computer.\n" + 
                 "At the end of the 5th round, the highest score wins!");
