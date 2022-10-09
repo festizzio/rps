@@ -45,17 +45,17 @@ function game() {
         let result = playRound(player, computer);
         if(result > 0) {
             playerWins++;
-            alert("You won that round!");
+            console.log("You won that round!");
         } else if(result < 0) {
             computerWins++;
-            alert("The computer won that round! Oh no!");
+            console.log("The computer won that round! Oh no!");
         } else {
-            alert("It's a tie round! Phew, that was a close one!");
+            console.log("It's a tie round! Phew, that was a close one!");
         }
         promptMessage = i < 3 ? "Another round, who will be victorious?" : 
                                 "Time for the final round! It's anybody's game!";
     }
-    let resultString = playerWins > computerWins ? "Congratulations, you have won!" 
+    let resultString = playerWins > computerWins ? "Congratulations, you have won!"
         : (computerWins > playerWins ? "So sad, the computer won!" 
         : "What a twist! Nobody won, it's a tie!");
 
