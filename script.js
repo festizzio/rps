@@ -33,13 +33,13 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     console.log("Let's play Rock Paper Scissors!");
-    console.log("The game will run 5 rounds against the computer.\n" + 
-                "At the end of the 5th round, the highest score wins!");
+    console.log("The games will be played against the computer.\n" + 
+                "Whoever reaches 5 points first wins!");
 
     let playerWins = 0, computerWins = 0;
     let promptMessage = "Let's start! What is your first choice?";
 
-    for(let i = 0; i < 5; i++) {
+    while(playerWins < 5 && computerWins < 5) {
         player = prompt(promptMessage);
         let computer = getComputerChoice();
         let result = playRound(player, computer);
@@ -52,8 +52,7 @@ function game() {
         } else {
             console.log("It's a tie round! Phew, that was a close one!");
         }
-        promptMessage = i < 3 ? "Another round, who will be victorious?" : 
-                                "Time for the final round! It's anybody's game!";
+        promptMessage = "Another round, who will be victorious?";
     }
     let resultString = playerWins > computerWins ? "Congratulations, you have won!"
         : (computerWins > playerWins ? "So sad, the computer won!" 
