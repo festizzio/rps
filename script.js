@@ -1,3 +1,15 @@
+function addClickListeners() {
+    let buttons = document.querySelectorAll("button");
+    console.log(buttons);
+    buttons.forEach((btn) => {
+        addEventListener("click", e => {
+            playRound(btn.textContent, getComputerChoice());
+        });
+    });
+}
+
+addClickListeners();
+
 function getComputerChoice() {
     let rock = "rock", paper = "paper", scissors = "scissors";
     let choice = Math.floor((Math.random() * 3) + 1);
@@ -21,12 +33,15 @@ function playRound(playerSelection, computerSelection) {
     let computer = computerSelection.toLowerCase();
 
     if(player === computer) {
+        console.log("tie!");
         return 0;
     } else if((player === "rock" && computer === "scissors") ||
               (player === "scissors" && computer === "paper") ||
               (player === "paper" && computer === "rock")) {
+        console.log("you win that round!");
         return 1;
     } else {
+        console.log("computer won that round! One step closer to total annihilation!");
         return -1;
     }
 }
@@ -62,4 +77,4 @@ function game() {
     console.log(`Final score: \nComputer: ${computerWins}\nPlayer: ${playerWins}`);
 }
 
-game();
+// game();
