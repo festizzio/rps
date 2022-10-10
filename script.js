@@ -1,11 +1,10 @@
 function addClickListeners() {
-    let buttons = document.querySelectorAll("button");
-    console.log(buttons);
-    buttons.forEach((btn) => {
-        addEventListener("click", e => {
-            playRound(btn.textContent, getComputerChoice());
-        });
-    });
+    let rock = document.querySelector(".rock");
+    let paper = document.querySelector(".paper");
+    let scissors = document.querySelector(".scissors");
+    rock.addEventListener("click", e => playRound("rock", getComputerChoice()));
+    paper.addEventListener("click", e => playRound("paper", getComputerChoice()));
+    scissors.addEventListener("click", e => playRound("scissors", getComputerChoice()));
 }
 
 addClickListeners();
@@ -32,17 +31,20 @@ function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
 
+    console.log("Your choice: " + player);
+    console.log("Computer's choice: " + computer);
+
     if(player === computer) {
         console.log("tie!");
-        return 0;
+        // return 0;
     } else if((player === "rock" && computer === "scissors") ||
               (player === "scissors" && computer === "paper") ||
               (player === "paper" && computer === "rock")) {
         console.log("you win that round!");
-        return 1;
+        // return 1;
     } else {
         console.log("computer won that round! One step closer to total annihilation!");
-        return -1;
+        // return -1;
     }
 }
 
