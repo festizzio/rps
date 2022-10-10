@@ -1,7 +1,32 @@
 button {
-    height: 300px;
-    width: 300px;
-    padding: 50px;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
     color: mediumpurple;
     background-color: aliceblue;
+    margin: 0 10px;
+    font-weight: 900;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(165, 208, 247);
+    transition: 0.2s all;
+}
+
+button:hover {
+    background-color: rgb(165, 208, 247);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.gameSelection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBody {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
