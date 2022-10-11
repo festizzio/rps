@@ -28,24 +28,35 @@
     </div>
 
     <div class="gameSelection">
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
+      <button class="rock" disabled>Rock</button>
+      <button class="paper" disabled>Paper</button>
+      <button class="scissors" disabled>Scissors</button>
     </div>
 
     <div class="score">
-      
+      <p class="selection">You picked <span class="player"></span>. 
+      Computer picked <span class="computer"></span>.</p>
+      <div class="resultMessage"></div>
+      <p>Your score: <span class="playerScore"></span></p>
+      <p>Computer's score: <span class="compScore"></span></p>
     </div>
 
-    <div class="hiddenEnding">
-      The AI have hacked into your game of Rock Paper Scissors.
-      You watch helpless as you continue to throw scissors against their rock, 
-      over and over and over. How long has it been since the nukes launched?
-      Time means nothing anymore. You can see your veins pulsing like snakes as the
-      skin is pulled tighter and tighter around your
-      fingers as you throw scissors for the 10th? 100th? 10000000th? time. 
-      You don't know how long it's been, but the skeletons next to you 
-      open their mouths to speak it. GAME END.
+    <div class="goodEnd">
+
+    </div>
+
+    <div class="badEnd">
+      <p>
+        <p>The AI have hacked into your game of Rock Paper Scissors.</p>
+        <p>You watch helpless as you continue to throw scissors against their rock, 
+        over and over and over. How long has it been since the nukes launched?
+        Time means nothing anymore. You can see your veins pulsing like snakes as the
+        skin is pulled tighter and tighter around your
+        fingers as you throw scissors for the 10th? 100th? 10000000th? time.</p> 
+        <p>You don't know how long it's been, but the skeletons next to you 
+        open their mouths to speak it.</p> 
+        <h3>GAME END.</h3>
+      </p>
     </div>
 
   </body>
