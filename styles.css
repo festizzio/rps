@@ -19,6 +19,10 @@ button:active {
     transform: scale(0.98);
 }
 
+.startBanner button {
+    height: 50px;
+}
+
 .gameSelection {
     display: flex;
     justify-content: center;
@@ -29,4 +33,18 @@ button:active {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+
+}
+
+.startBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.hiddenEnding {
+    visibility: hidden;
 }
