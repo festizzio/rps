@@ -45,6 +45,18 @@ button:active {
     margin: 10px;
 }
 
-.hiddenEnding {
+.goodEnd {
+
+}
+
+.badEnd {
+    visibility: hidden;
+}
+
+.score {
+    text-align: center;
+}
+
+.selection {
     visibility: hidden;
 }
