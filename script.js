@@ -1,5 +1,3 @@
-
-
 const startButton = document.querySelector(".start");
 const playerScoreSpan = document.querySelector(".playerScore");
 const computerScoreSpan = document.querySelector(".compScore");
@@ -16,21 +14,27 @@ let playerScore = 0, computerScore = 0;
 
 
 function setup() {
-    rock.addEventListener("click", e => playRound("rock"));
-    paper.addEventListener("click", e => playRound("paper"));
-    scissors.addEventListener("click", e => playRound("scissors"));
-    startButton.textContent = "Start";
-    startButton.addEventListener("click", e => {
-        startButton.style.visibility = "hidden";
-        rock.disabled = false;
-        paper.disabled = false;
-        scissors.disabled = false;
-    });
+
+    // This should only be called during the first game. 
+    // It should be skipped for subsequent games.
+    if(startButton.textContent !== "Play again") {
+        rock.addEventListener("click", e => playRound("rock"));
+        paper.addEventListener("click", e => playRound("paper"));
+        scissors.addEventListener("click", e => playRound("scissors"));
+
+        startButton.addEventListener("click", e => {
+            startButton.style.visibility = "hidden";
+            rock.disabled = false;
+            paper.disabled = false;
+            scissors.disabled = false;
+        });
+    }
 
     goodEnd.style.visibility = "hidden";
     badEnd.style.visibility = "hidden";
     playerScoreSpan.textContent = 0;
     computerScoreSpan.textContent = 0;
+    playerScore = 0, computerScore = 0;
 }
 
 setup();
@@ -79,6 +83,8 @@ function playRound(playerSelection) {
         if(playerScore <= 1) {
             badEnd.style.visibility = "visible";
         } else {
+            let finalChoice = document.querySelector(".finalChoice");
+            finalChoice.textContent = player;
             goodEnd.style.visibility = "visible";
         }
         gameOver();
@@ -86,10 +92,14 @@ function playRound(playerSelection) {
 }
 
 function gameOver() {
+    startButton.style.visibility = "visible";
     startButton.textContent = "Play again";
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
-    startButton.style.visibility = "visible";
-    setup();
+    
+    startButton.addEventListener("click", e => {
+        startButton.style.visibility = "hidden";
+        setup();
+    });
 }
