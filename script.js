@@ -3,6 +3,7 @@ const playerScoreSpan = document.querySelector(".playerScore");
 const computerScoreSpan = document.querySelector(".compScore");
 const goodEnd = document.querySelector(".goodEnd");
 const badEnd = document.querySelector(".badEnd");
+const mediumEnd = document.querySelector(".mediumEnd");
 const resultMessage = document.querySelector(".resultMessage");
 const playerSelectionSpan = document.querySelector(".selection .player");
 const computerSelectionSpan = document.querySelector(".selection .computer");
@@ -82,6 +83,8 @@ function playRound(playerSelection) {
     if(computerScore === 5 || playerScore === 5) {
         if(playerScore <= 1) {
             badEnd.style.visibility = "visible";
+        } else if(playerScore < 5) {
+            mediumEnd.style.visibility = "visible";
         } else {
             let finalChoice = document.querySelector(".finalChoice");
             finalChoice.textContent = player;
