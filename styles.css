@@ -57,3 +57,7 @@ button:active {
     font-size: 12px;
     font-style: italic;
 }
+
+.playAgain {
+    font-style: italic;
+}
