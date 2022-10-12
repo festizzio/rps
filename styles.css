@@ -45,11 +45,7 @@ button:active {
     margin: 10px;
 }
 
-.goodEnd {
-
-}
-
-.badEnd {
+.goodEnd, .badEnd, .selection {
     visibility: hidden;
 }
 
@@ -57,6 +53,7 @@ button:active {
     text-align: center;
 }
 
-.selection {
-    visibility: hidden;
+.subEndText {
+    font-size: 12px;
+    font-style: italic;
 }
