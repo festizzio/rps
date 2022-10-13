@@ -33,6 +33,7 @@ function setup() {
 
     goodEnd.style.visibility = "hidden";
     badEnd.style.visibility = "hidden";
+    mediumEnd.style.visibility = "hidden";
     playerScoreSpan.textContent = 0;
     computerScoreSpan.textContent = 0;
     playerScore = 0, computerScore = 0;
